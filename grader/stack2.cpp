@@ -9,54 +9,47 @@ class Stack {
 
 public:
     Stack() { top = -1; }
-    bool push(int x);
-    int pop();
-    int peek();
-    bool isEmpty();
-    int size();
-    void printStack();
-};
 
-bool Stack::push(int x) {
-    if (top >= (MAX - 1)) {
+    bool push(int x){
+        if (top >= (MAX - 1)) {
         cout << "Stack Overflow" << endl;
         return false;
     } else {
         arr[++top] = x;
         return true;
     }
-}
+    }
 
-int Stack::pop() {
-    if (top < 0) {
+    int pop(){
+        if (top < 0) {
         cout << "Stack Underflow" << endl;
         return 0;
     } else {
         int x = arr[top--];
         return x;
     }
-}
+    }
 
-int Stack::peek() {
-    if (top < 0) {
+    int peek(){
+        if (top < 0) {
         cout << "Stack is empty" << endl;
         return 0;
     } else {
         int x = arr[top];
         return x;
     }
-}
+    }
 
-bool Stack::isEmpty() {
-    return (top < 0);
-}
+    bool isEmpty(){
+        return (top < 0);
+    }
+    
+    int size(){
+        return top + 1;
+    }
 
-int Stack::size() {
-    return top + 1;
-}
-
-void Stack::printStack() {
-    if (top < 0) {
+    void printStack(){
+        if (top < 0) {
         cout << "Stack is empty" << endl;
     } else {
         for (int i = 0; i <= top; i++) {
@@ -64,7 +57,58 @@ void Stack::printStack() {
         }
         cout << endl;
     }
-}
+    }
+
+};
+
+// bool Stack::push(int x) {
+//     if (top >= (MAX - 1)) {
+//         cout << "Stack Overflow" << endl;
+//         return false;
+//     } else {
+//         arr[++top] = x;
+//         return true;
+//     }
+// }
+
+// int Stack::pop() {
+//     if (top < 0) {
+//         cout << "Stack Underflow" << endl;
+//         return 0;
+//     } else {
+//         int x = arr[top--];
+//         return x;
+//     }
+// }
+
+// int Stack::peek() {
+//     if (top < 0) {
+//         cout << "Stack is empty" << endl;
+//         return 0;
+//     } else {
+//         int x = arr[top];
+//         return x;
+//     }
+// }
+
+// bool Stack::isEmpty() {
+//     return (top < 0);
+// }
+
+// int Stack::size() {
+//     return top + 1;
+// }
+
+// void Stack::printStack() {
+//     if (top < 0) {
+//         cout << "Stack is empty" << endl;
+//     } else {
+//         for (int i = 0; i <= top; i++) {
+//             cout << arr[i] << " ";
+//         }
+//         cout << endl;
+//     }
+// }
 
 int main() {
     Stack s;
